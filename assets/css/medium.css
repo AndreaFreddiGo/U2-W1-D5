@@ -1,0 +1,164 @@
+/* BODY */
+
+body {
+  font-family: 'Roboto';
+  color: #191919;
+}
+
+/* HEADER */
+
+header {
+  height: 455px;
+  background-color: #ffc017;
+  border-bottom: 1px solid #191919;
+  margin-top: 75px;
+}
+
+nav {
+  height: 75px;
+  background-color: #ffc017;
+  border-bottom: 1px solid #191919;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 25px;
+}
+
+nav div,
+div ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  padding: 10px 10px;
+}
+
+ul li.hiddenLi {
+  display: none;
+}
+
+nav img {
+  height: 25px;
+}
+
+nav button {
+  background-color: #191919;
+  color: #ffffff;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+
+header section {
+  height: 455px;
+  display: flex;
+  padding-left: 25px;
+  position: relative;
+}
+
+header section h1 {
+  font-size: 70px;
+  font-family: 'Spectral';
+  font-weight: 500;
+  letter-spacing: -6px;
+  margin-bottom: 30px;
+}
+
+header section div {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 192, 23, 1) 85%,
+    rgba(255, 192, 23, 0) 100%
+  );
+  z-index: 1;
+}
+
+header section svg {
+  min-width: 585px;
+  display: none;
+  position: absolute;
+  right: -25%;
+  z-index: 0;
+}
+
+header section button {
+  background-color: #191919;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  padding: 12px 50px;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+header section p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* MAIN */
+
+main {
+  height: 1200px;
+  font-size: 30px;
+}
+
+/* MEDIA QUERY TABLET*/
+
+@media screen and (min-width: 600px) {
+  nav {
+    padding: 25px 25px 25px 40px;
+  }
+
+  ul li.hiddenLi {
+    display: inline-block;
+  }
+
+  header section svg {
+    display: block;
+  }
+  header section {
+    padding-left: 40px;
+  }
+
+  header section h1 {
+    font-size: 85px;
+  }
+  header section p {
+    font-size: 22px;
+  }
+}
+
+/* MEDIA QUERY DESKTOP*/
+
+@media screen and (min-width: 900px) {
+  nav {
+    padding: 25px 25px 25px 80px;
+  }
+  header section svg {
+    display: block;
+  }
+  header section {
+    padding-left: 80px;
+  }
+  header section h1 {
+    font-size: 105px;
+  }
+
+  header section p {
+    font-size: 22px;
+  }
+}
