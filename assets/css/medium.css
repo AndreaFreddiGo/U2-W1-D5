@@ -15,6 +15,8 @@ header {
   overflow: hidden;
 }
 
+/* la navbar così creata resta "attaccata" al top della finestra anche durante lo scorrimento
+verticale */
 nav {
   height: 75px;
   background-color: #ffc017;
@@ -32,6 +34,7 @@ nav {
   transition: 1s;
 }
 
+/* definisco la classe che fa cambiare il background color della navbar a seguito di scorrimento */
 .whiteNav {
   background-color: #ffffff;
 }
@@ -64,6 +67,7 @@ nav button {
   transition: 1s;
 }
 
+/* definisco la classe che fa cambiare il background color del bottone a seguito di scorrimento */
 .greenButton {
   background-color: #1a8917;
 }
@@ -83,6 +87,9 @@ header section h1 {
   margin-bottom: 30px;
 }
 
+/* ho inserito un gradiente ed un layer più "elevato" rispetto al ARTWORK di "M"
+perché mi piace di più se alla diminuzione della larghezza della pagina le "M"
+possano leggermente scomparire dietro al testo presente a sinistra */
 header section div {
   height: 100%;
   display: flex;
@@ -122,17 +129,16 @@ header section p {
 
 /* MAIN */
 
-main {
-}
-
 #secondSection {
   display: flex;
   flex-direction: column;
+  position: relative;
+  min-height: 100vh;
 }
 
 #trending {
   padding: 0px 25px;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid #ebebeb;
   display: flex;
   flex-direction: column;
 }
@@ -163,7 +169,7 @@ main {
 .trendingArticle > div:first-of-type {
   display: flex;
   flex-direction: row;
-  color: #e2e2e2;
+  color: #ebebeb;
   font-size: 30px;
   font-weight: 800;
   padding-right: 20px;
@@ -207,8 +213,12 @@ main {
   padding-top: 12px;
 }
 
+#secondSection {
+  padding: 20px 25px;
+  position: relative;
+}
+
 #discover {
-  padding-right: 25px;
   display: flex;
   flex-direction: column;
 }
@@ -217,14 +227,14 @@ main {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 800;
-  padding: 50px 0px 15px 0px;
+  padding: 30px 0px 15px 0px;
 }
 
 #tagButtons {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 25px;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .tagButton {
@@ -233,7 +243,7 @@ main {
   font-size: 13px;
   font-weight: 500;
   padding: 7px 15px;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #ebebeb;
   margin: 5px 10px 5px 0px;
 }
 
@@ -252,7 +262,6 @@ main {
 }
 
 #articles {
-  padding-right: 25px;
   display: flex;
   flex-direction: column;
 }
@@ -305,6 +314,13 @@ main {
   margin-left: auto;
 }
 
+#dateTimeStar div {
+  padding: 7px;
+  background-color: #ebebeb;
+  border-radius: 50px;
+  margin-left: 5px;
+}
+
 /* MEDIA QUERY TABLET*/
 
 @media screen and (min-width: 600px) {
@@ -330,9 +346,12 @@ main {
     font-size: 22px;
   }
 
-  #trending,
-  #secondSection {
+  #trending {
     padding: 0px 40px;
+  }
+
+  #secondSection {
+    padding: 20px 40px;
   }
 
   #trendingArticles {
@@ -367,18 +386,30 @@ main {
     font-size: 22px;
   }
 
+  /* questa parte è importante perché, diversamente dalle visualizzazioni in formato
+  mobile e tablet, in versione desktop la flex-direction passa a row-reverse e gli elementi
+  si dispongono in riga */
   #secondSection {
     display: flex;
     flex-direction: row-reverse;
-    padding: 0px 80px;
+    padding: 20px 80px;
+    align-items: flex-start;
   }
 
-  #trending {
-    flex-basis: 50%;
+  /* ho aggiunto una position: sticky a questo elemento in modo che, come nella pagina originale,
+   quando scorrendo verticalmente la navbar arriva al suo livello, anch'esso si blocca e resta visibile
+   in primo piano */
+  #discover {
+    flex: 1;
+    padding-left: 80px;
+    padding-right: 20px;
+    position: sticky;
+    top: 75px;
+    align-self: flex-start;
   }
 
   #articles {
-    flex-basis: 150%;
+    flex: 2;
   }
 
   #trending {
